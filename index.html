@@ -272,6 +272,131 @@ footer strong{color:rgba(255,255,255,0.85);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
 .fade-up{animation:fadeUp .6s ease both;}
 .delay-1{animation-delay:.1s;} .delay-2{animation-delay:.2s;} .delay-3{animation-delay:.3s;} .delay-4{animation-delay:.4s;}
+<<<<<<< HEAD
+
+/* ══════════════════════════════════════
+   HAMBURGER MENU (mobile)
+══════════════════════════════════════ */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--terra);border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:84px;left:12px;right:12px;z-index:899;background:rgba(251,247,242,0.97);backdrop-filter:var(--blur2);-webkit-backdrop-filter:var(--blur2);border:1px solid rgba(200,86,42,0.18);border-radius:18px;padding:18px 22px;box-shadow:0 8px 32px rgba(0,0,0,0.12);}
+.mobile-menu.open{display:block;}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.mobile-menu ul li a{display:block;padding:11px 0;color:var(--text-mid);font-size:15px;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,0,0,0.06);}
+.mobile-menu ul li:last-child a{border-bottom:none;}
+.mobile-menu .mob-btns{display:flex;gap:10px;margin-top:14px;}
+.mobile-menu .mob-btns .nav-admin-btn,.mobile-menu .mob-btns .nav-cta{flex:1;text-align:center;}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — TABLET (≤900px)
+══════════════════════════════════════ */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:36px;}
+  .hero-right{display:none;}
+  .hero h1{font-size:2.8rem;}
+  .about-inner{grid-template-columns:1fr;gap:36px;}
+  .about-float{bottom:-14px;right:-10px;}
+  .plots-grid{grid-template-columns:repeat(2,1fr);}
+  .steps-wrap{grid-template-columns:repeat(3,1fr);gap:20px;}
+  .steps-line{display:none;}
+  .step-item:nth-child(4),.step-item:nth-child(5){display:none;}
+  .docs-inner{grid-template-columns:1fr;gap:28px;}
+  .testi-grid{grid-template-columns:repeat(2,1fr);}
+  .contact-inner{grid-template-columns:1fr;gap:36px;}
+  .price-two-col{grid-template-columns:1fr;}
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — PHONE (≤768px)
+══════════════════════════════════════ */
+@media(max-width:768px){
+  /* NAV */
+  .nav-links,.nav-right{display:none;}
+  .hamburger{display:flex;}
+  .nav-glass{padding:0 18px;}
+
+  /* HERO */
+  .hero{padding:100px 5% 60px;}
+  .hero-inner{grid-template-columns:1fr;gap:28px;}
+  .hero-right{display:none;}
+  .hero h1{font-size:2.2rem;line-height:1.1;}
+  .hero-sub{font-size:.95rem;}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .stat-glass{padding:14px 8px;}
+  .stat-glass .num{font-size:1.5rem;}
+  .stat-glass .lbl{font-size:10px;}
+  .hero-btns{gap:10px;}
+  .btn-grad,.btn-outline{padding:12px 22px;font-size:14px;}
+
+  /* ABOUT */
+  .about{padding:60px 5%;}
+  .about-inner{grid-template-columns:1fr;gap:28px;}
+  .about-float{position:relative;bottom:auto;right:auto;margin-top:14px;display:inline-flex;gap:10px;align-items:center;}
+  .about-values{grid-template-columns:1fr 1fr;}
+  .section-title{font-size:2rem;}
+
+  /* LISTINGS */
+  .listings{padding:60px 5%;}
+  .plots-grid{grid-template-columns:1fr;}
+  .filter-bar{gap:8px;}
+  .filter-btn{padding:8px 16px;font-size:12px;}
+
+  /* PROCESS */
+  .process{padding:60px 5%;}
+  .steps-wrap{grid-template-columns:1fr 1fr;gap:18px;margin-top:32px;}
+  .steps-line{display:none;}
+  .step-item:nth-child(1),.step-item:nth-child(2),.step-item:nth-child(3),
+  .step-item:nth-child(4),.step-item:nth-child(5){display:block;}
+  .step-item p{max-width:100%;}
+  .step-circle{width:58px;height:58px;font-size:1.2rem;}
+
+  /* DOCS */
+  .docs-sec{padding:60px 5%;}
+  .docs-inner{grid-template-columns:1fr;gap:22px;}
+
+  /* PRICING */
+  .pricing{padding:60px 5%;}
+  .price-glass-table{overflow-x:auto;}
+  .price-glass-table table{min-width:480px;}
+  .price-two-col{grid-template-columns:1fr;gap:16px;}
+
+  /* TESTIMONIALS */
+  .testi{padding:60px 5%;}
+  .testi-grid{grid-template-columns:1fr;gap:16px;}
+
+  /* CONTACT */
+  .contact{padding:60px 5% 80px;}
+  .contact-inner{grid-template-columns:1fr;gap:28px;}
+  .fg-row{grid-template-columns:1fr;}
+
+  /* FOOTER */
+  footer{padding:28px 5%;font-size:12px;}
+  .footer-tags{gap:6px;}
+
+  /* WA FLOAT */
+  .wa-float{bottom:20px;right:16px;width:52px;height:52px;font-size:22px;}
+
+  /* ADMIN PANEL */
+  .admin-panel{border-radius:18px;}
+  .admin-form-grid{grid-template-columns:1fr;}
+  .admin-fg.full{grid-column:1;}
+  .admin-plot-item{flex-direction:column;align-items:flex-start;gap:10px;}
+  .admin-plot-item > div:last-child{width:100%;justify-content:space-between;}
+  .admin-tabs{overflow-x:auto;}
+  .admin-tab{white-space:nowrap;padding:12px 14px;font-size:12.5px;}
+}
+
+@media(max-width:400px){
+  .hero h1{font-size:1.85rem;}
+  .about-values{grid-template-columns:1fr;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .stat-glass:last-child{grid-column:1/-1;}
+}
+=======
+>>>>>>> 3aa8849459867fc243f97b715bb918a9f1858be2
 </style>
 </head>
 <body>
@@ -292,9 +417,33 @@ footer strong{color:rgba(255,255,255,0.85);}
       <button class="nav-admin-btn" onclick="openAdmin()">⚙ Admin</button>
       <a href="https://wa.me/919000000000" class="nav-cta">💬 WhatsApp</a>
     </div>
+<<<<<<< HEAD
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+    <li><a href="#listings" onclick="closeMobileMenu()">Listings</a></li>
+    <li><a href="#process" onclick="closeMobileMenu()">How It Works</a></li>
+    <li><a href="#documents" onclick="closeMobileMenu()">Documents</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <div class="mob-btns">
+    <button class="nav-admin-btn" onclick="closeMobileMenu();openAdmin()">⚙ Admin</button>
+    <a href="https://wa.me/919000000000" class="nav-cta" onclick="closeMobileMenu()">💬 WhatsApp</a>
+  </div>
+</div>
+
+=======
+  </div>
+</nav>
+
+>>>>>>> 3aa8849459867fc243f97b715bb918a9f1858be2
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-inner">
@@ -859,6 +1008,25 @@ document.querySelector('.btn-submit-glass').addEventListener('click',()=>{
   alert('Enquiry received! In production, this sends data to your backend or WhatsApp API.');
 });
 
+<<<<<<< HEAD
+/* ════════ MOBILE MENU ════════ */
+function toggleMobileMenu(){
+  const btn=document.getElementById('hamburgerBtn');
+  const menu=document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function closeMobileMenu(){
+  document.getElementById('hamburgerBtn').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+// Close mobile menu on scroll
+window.addEventListener('scroll',function(){
+  if(document.getElementById('mobileMenu').classList.contains('open'))closeMobileMenu();
+},{passive:true});
+
+=======
+>>>>>>> 3aa8849459867fc243f97b715bb918a9f1858be2
 /* ════════ INIT ════════ */
 renderPlots();
 updateHeroMini();
